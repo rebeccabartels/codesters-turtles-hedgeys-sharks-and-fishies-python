@@ -1,0 +1,66 @@
+stage.set_background_color('lavender')
+
+player = codesters.Sprite("hedgehog")
+
+computer = codesters.Sprite("robot")
+
+player.go_to(-100, -75)
+
+computer.go_to(125, -75)
+
+text = codesters.Text("Choose turtle, fish, or shark! Pay attention - here come the rules! ")
+
+stage.wait(1)
+
+text.set_text("Fish beats turtle!")
+
+stage.wait(1)
+
+text.set_text("Turtle beats shark!")
+
+stage.wait(1)
+
+text.set_text("Shark beats fish!")
+
+stage.wait(1)
+
+text.set_text(' ')
+
+choice = player.ask("Choose turtle, fish, or shark.")
+
+if choice == "turtle":
+    sprite = codesters.Sprite("turtle")
+    player.say("I choose turtle")
+
+
+
+if choice == "fish":
+    sprite = codesters.Sprite("fish")
+    player.say("I choose fish")
+
+
+
+if choice == "shark":
+    sprite = codesters.Sprite("shark")
+    player.say("I choose shark")
+    sprite.go_to(-125, 140)
+    random_choice = random.randint(1,3)
+
+if random_choice == 1:
+    sprite = codesters.Sprite("turle")
+    computer.say("I choose turtle")
+    computer_choice = "turtle"
+
+if random_choice == 2:
+    sprite = codesters.Sprite("fish")
+    computer.say("I choose fish")
+    computer_choice = "fish"
+
+if random_choice == 3:
+    sprite = codesters.Sprite("shark")
+    computer.say("I choose shark")
+    computer_choice = "shark"
+sprite.go_to(125, 140)
+
+
+
